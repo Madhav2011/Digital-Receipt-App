@@ -1,4 +1,4 @@
-package com.example.layoutdemo1
+package com.digitalreceipt.app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

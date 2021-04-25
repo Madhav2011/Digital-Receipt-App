@@ -1,4 +1,4 @@
-package com.example.layoutdemo1
+package com.digitalreceipt.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
