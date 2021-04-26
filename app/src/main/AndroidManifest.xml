@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.digitalreceipt.app">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LayoutDemo1">
-        <activity android:name="com.digitalreceipt.app.homepage"></activity>
-        <activity android:name="com.digitalreceipt.app.Registerpage" />
-        <activity android:name="com.digitalreceipt.app.MainActivity">
+        <activity android:name=".homepage1"></activity>
+        <activity android:name=".Registerpage" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
