@@ -14,9 +14,11 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mobilereceipt"/>
+        app:layout_constraintVertical_bias="0.499"
+        app:srcCompat="@drawable/mobilereceipt" />
 
     <TextView
         android:id="@+id/splashtext"
@@ -34,6 +36,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagelogo"
-        app:layout_constraintVertical_bias="0.084"
-        />
+        app:layout_constraintVertical_bias="0.084"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
