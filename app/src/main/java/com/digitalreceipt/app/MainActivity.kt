@@ -1,6 +1,8 @@
 package com.digitalreceipt.app
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -37,14 +39,19 @@ class MainActivity : AppCompatActivity() {
             var pass= entUpass.editText!!.text.toString()
             if(uname.equals("admin") && pass.equals("admin"))
             {
-                Toast.makeText(applicationContext,"Login Successful!!",Toast.LENGTH_LONG).show()
-                    var intent: Intent = Intent(applicationContext, homepage1::class.java)
-                    startActivity(intent)
+                var preferences=getSharedPreferences("MyPref",Context.MODE_PRIVATE)
+                var editor=preferences.edit()
+                editor.putString("user",uname)
+                editor.commit()
+                var intent: Intent = Intent(applicationContext, homepage1::class.java)
+                startActivity(intent)
+                finish()
             }
             else
             {
                 Toast.makeText(applicationContext,"Invalid Credential!!",Toast.LENGTH_LONG).show()
             }
+
         }
     }
 }

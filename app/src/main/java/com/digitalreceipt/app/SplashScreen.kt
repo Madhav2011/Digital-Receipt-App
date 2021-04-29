@@ -1,5 +1,6 @@
 package com.digitalreceipt.app
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,9 +24,20 @@ class SplashScreen : AppCompatActivity() {
         var animatmove=AnimationUtils.loadAnimation(applicationContext,R.anim.movement)
         TextView.animation=animatmove
         Handler().postDelayed({
-            var intent=Intent(applicationContext,MainActivity::class.java)
-            startActivity(intent)
+            var pref=getSharedPreferences("MyPref",Context.MODE_PRIVATE)
+            var str=pref.getString("user","wrong")
+            if(str.equals("wrong")){
+                var intent=Intent(applicationContext,MainActivity::class.java)
+                startActivity(intent)
+            }
+            else{
+                var intent=Intent(applicationContext,homepage1::class.java)
+                startActivity(intent)
+            }
             finish()
+            /*var intent=Intent(applicationContext,MainActivity::class.java)
+            startActivity(intent)
+            finish()*/
         },3000)
     }
 }

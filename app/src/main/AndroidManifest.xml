@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".homepage1" />
+        <activity android:name=".homepage1" android:theme="@style/Theme.withactionbar"/>
         <activity android:name=".Registerpage" />
         <activity android:name=".MainActivity">
         </activity>
