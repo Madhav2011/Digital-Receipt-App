@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addiconbottom"
         app:layout_constraintTop_toTopOf="@id/bottom"
         app:layout_constraintBottom_toTopOf="@id/bottom"
         android:backgroundTint="@color/white"
