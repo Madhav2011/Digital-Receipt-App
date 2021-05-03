@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/menuHome"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/homeicon"
         android:title="Home"/>
 
+    <item android:id="@+id/menuSort"
+        android:icon="@drawable/sortingicon"
+        android:title="Sort" />
+<!--
+
     <item android:id="@+id/menuDummy"
-        android:title=""/>
+        android:title="" />
+-->
+
+    <item android:id="@+id/menuCategory"
+        android:icon="@drawable/categoriesicon"
+        android:title="Category"/>
 
     <item
         android:id="@+id/menuSetting"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/settingsicon"
         android:title="Profile" />
 
 
