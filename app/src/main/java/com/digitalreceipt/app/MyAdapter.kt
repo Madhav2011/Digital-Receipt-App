@@ -5,9 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.digitalreceipt.app.dataclass.ProductList
 
 /*
 class MyAdapter(val productlist: List<String>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
@@ -36,33 +36,27 @@ class MyAdapter(val productlist: List<String>) : RecyclerView.Adapter<MyAdapter.
 }
 */
 
-class MyAdapter: RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter() : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
-    private var detailsimage = intArrayOf(R.drawable.avenger,R.drawable.batman,R.drawable.flash,R.drawable.groot,R.drawable.hulk,R.drawable.avenger,R.drawable.batman,R.drawable.flash,R.drawable.groot,R.drawable.hulk)
-
-    private var detailsprodname = arrayOf("Apple","Samsung","Nokia","LG","Motorola","Acer","Asus","Predator","Helios","Sony")
-
-    private var detailsexpiry = arrayOf("1st-May-2020","2nd-May-2020","3rd-May-2020","4th-May-2020","5th-May-2020","6th-May-2020","7th-May-2020","8th-May-2020","9th-May-2020","10th-May-2020")
-
-    private var detailscategory = arrayOf("Electronic","Furniture","Automobile","Household","Electronic","Furniture","Automobile","Household","Electronic","Furniture")
+    private val arrayList = ArrayList<ProductList>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout,parent,false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.card_layout, parent, false)
         return ViewHolder(v)
     }
 
     override fun getItemCount(): Int {
-        return detailsprodname.size
+        return arrayList.size
     }
 
     override fun onBindViewHolder(holder: MyAdapter.ViewHolder, position: Int) {
-        holder.cardImage.setImageResource(detailsimage[position])
-        holder.cardprodname.text = detailsprodname[position]
-        holder.cardText2.text = detailsexpiry[position]
-        holder.cardText3.text = detailscategory[position]
+        Glide.with(holder.itemView.context).load(arrayList[position].image).into(holder.cardImage)
+        holder.cardprodname.text = arrayList[position].name
+        holder.cardText2.text = arrayList[position].date
+        holder.cardText3.text = arrayList[position].cat
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var cardImage: ImageView
         var cardprodname: TextView
         var cardText2: TextView
@@ -74,6 +68,11 @@ class MyAdapter: RecyclerView.Adapter<MyAdapter.ViewHolder>() {
             cardText2 = itemView.findViewById(R.id.textView2incard)
             cardText3 = itemView.findViewById(R.id.textView3incard)
         }
+    }
+
+    internal fun addAll(arrayList: ArrayList<ProductList>) {
+        this.arrayList.clear()
+        this.arrayList.addAll(arrayList)
     }
 }
 
