@@ -11,7 +11,18 @@
         android:roundIcon="@drawable/mobilereceipt"
         android:supportsRtl="true"
         android:theme="@style/Theme.LayoutDemo1">
-        <activity android:name=".ProductForm"></activity>
+        <activity android:name=".Categorypage"
+            android:theme="@style/Theme.withactionbar"/>
+        <activity android:name=".ContactUsPage"
+            android:theme="@style/Theme.withactionbar"/>
+        <activity android:name=".AboutUsPage"
+            android:theme="@style/Theme.withactionbar"/>
+        <activity
+            android:name=".SettingPage"
+            android:theme="@style/Theme.withactionbar" />
+        <activity
+            android:name=".ProductForm"
+            android:theme="@style/Theme.withactionbar" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +34,7 @@
             android:name=".homepage1"
             android:theme="@style/Theme.withactionbar" />
         <activity android:name=".Registerpage" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

@@ -7,16 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".homepage1">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="51dp"
-        tools:layout_editor_absoluteY="303dp" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,18 +16,93 @@
         android:id="@+id/bottom"
         app:labelVisibilityMode="labeled"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomlayout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@color/teal_200">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/homebtn"
+            android:layout_width="85dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:text="Home"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/teal_200"
+            android:outlineProvider="none"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sortbtn"
+            android:layout_width="85dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:text="Sorting"
+            android:onClick="SelectedItem"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/homebtn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/teal_200"
+            android:outlineProvider="none"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/categorybtn"
+            android:layout_width="85dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="35dp"
+            android:text="Category"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sortbtn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/teal_200"
+            android:outlineProvider="none" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/settingbtn"
+            android:layout_width="85dp"
+            android:layout_height="55dp"
+            android:text="Setting"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/categorybtn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/teal_200"
+            android:outlineProvider="none" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addiconbottom"
-        app:layout_constraintTop_toTopOf="@id/bottom"
-        app:layout_constraintBottom_toTopOf="@id/bottom"
+        app:layout_constraintTop_toTopOf="@id/bottomlayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomlayout"
         android:backgroundTint="@color/white"
         app:elevation="16dp"
-        app:layout_constraintEnd_toEndOf="@id/bottom"
+        app:layout_constraintEnd_toEndOf="@id/bottomlayout"
         app:fabCustomSize="60dp"
         app:maxImageSize="70dp"
-        app:layout_constraintStart_toStartOf="@id/bottom"
+        app:layout_constraintStart_toStartOf="@id/bottomlayout"
         android:src="@drawable/plusiconorange_foreground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
