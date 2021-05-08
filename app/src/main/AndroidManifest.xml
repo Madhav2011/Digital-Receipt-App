@@ -11,12 +11,16 @@
         android:roundIcon="@drawable/mobilereceipt"
         android:supportsRtl="true"
         android:theme="@style/Theme.LayoutDemo1">
-        <activity android:name=".Categorypage"
-            android:theme="@style/Theme.withactionbar"/>
-        <activity android:name=".ContactUsPage"
-            android:theme="@style/Theme.withactionbar"/>
-        <activity android:name=".AboutUsPage"
-            android:theme="@style/Theme.withactionbar"/>
+        <activity android:name=".productdetails"></activity>
+        <activity
+            android:name=".Categorypage"
+            android:theme="@style/Theme.withactionbar" />
+        <activity
+            android:name=".ContactUsPage"
+            android:theme="@style/Theme.withactionbar" />
+        <activity
+            android:name=".AboutUsPage"
+            android:theme="@style/Theme.withactionbar" />
         <activity
             android:name=".SettingPage"
             android:theme="@style/Theme.withactionbar" />
