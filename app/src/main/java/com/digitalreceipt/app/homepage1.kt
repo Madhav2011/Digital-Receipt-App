@@ -98,7 +98,7 @@ class homepage1 : AppCompatActivity() {
                             name = value.name,
                             image = value.image,
                             date = value.expiryDate,
-                            cat = value.nameShop
+                            cat = value.category
                         )
                     )
                 }
@@ -180,7 +180,7 @@ class homepage1 : AppCompatActivity() {
                                 name = value.name,
                                 image = value.image,
                                 date = value.expiryDate,
-                                cat = value.nameShop
+                                cat = value.category
                             )
                         )
                     }
@@ -216,7 +216,7 @@ class homepage1 : AppCompatActivity() {
                             name = value.name,
                             image = value.image,
                             date = value.expiryDate,
-                            cat = value.nameShop
+                            cat = value.category
                         )
                     )
                 }
@@ -249,14 +249,14 @@ class homepage1 : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     snapshot.children.forEach {
                         val value = it.getValue(NewProductDataClass::class.java)
-                        if(value!!.nameShop == cat) {
+                        if(value!!.category == cat) {
                             arrayList.add(
                                 ProductList(
-                                    value!!.id,
+                                    value.id,
                                     name = value.name,
                                     image = value.image,
                                     date = value.expiryDate,
-                                    cat = value.nameShop
+                                    cat = value.category
                                 )
                             )
                         }

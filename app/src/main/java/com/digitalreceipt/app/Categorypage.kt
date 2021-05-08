@@ -3,12 +3,10 @@ package com.digitalreceipt.app
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.digitalreceipt.app.dataclass.NewProductDataClass
-import com.digitalreceipt.app.dataclass.ProductList
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -30,9 +28,10 @@ class Categorypage : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 snapshot.children.forEach {
                     val value = it.getValue(NewProductDataClass::class.java)
-                        arrayList.add(value!!.nameShop)
+                    if (!arrayList.contains(value!!.category))
+                        arrayList.add(value.category)
                 }
-                val catAdapter = CatAdapter(){
+                val catAdapter = CatAdapter {
                     val intent = Intent(this@Categorypage, homepage1::class.java)
                     intent.putExtra("cat", arrayList[it])
                     setResult(202, intent)
@@ -40,7 +39,8 @@ class Categorypage : AppCompatActivity() {
                 }
                 catAdapter.addAll(arrayList)
                 recyclerViewCat.apply {
-                    layoutManager = LinearLayoutManager(this@Categorypage, RecyclerView.VERTICAL, false)
+                    layoutManager =
+                        LinearLayoutManager(this@Categorypage, RecyclerView.VERTICAL, false)
                     adapter = catAdapter
                 }
             }

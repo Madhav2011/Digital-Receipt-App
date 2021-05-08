@@ -8,9 +8,10 @@ data class NewProductDataClass(
     val billNumber: String,
     val warrentyCard: String,
     val expiryDate: String,
+    val category: String,
     val nameShop: String,
     val contact: String,
     val address: String
 ) {
-    constructor() : this(-1,"", "", "", "", "", "", "", "", "")
+    constructor() : this(-1, "","", "", "", "", "", "", "", "", "")
 }

@@ -1,10 +1,13 @@
 package com.digitalreceipt.app
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.digitalreceipt.app.dataclass.ProductList
@@ -54,6 +57,12 @@ class MyAdapter() : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
         holder.cardprodname.text = arrayList[position].name
         holder.cardText2.text = arrayList[position].date
         holder.cardText3.text = arrayList[position].cat
+
+        holder.constraintincard.setOnClickListener {
+            val intent = Intent(holder.itemView.context, productdetails::class.java)
+            intent.putExtra("productId", arrayList[position].id)
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -61,12 +70,14 @@ class MyAdapter() : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
         var cardprodname: TextView
         var cardText2: TextView
         var cardText3: TextView
+        var constraintincard: ConstraintLayout
 
         init {
             cardImage = itemView.findViewById(R.id.imageViewincard)
             cardprodname = itemView.findViewById(R.id.productnameincard)
             cardText2 = itemView.findViewById(R.id.textView2incard)
             cardText3 = itemView.findViewById(R.id.textView3incard)
+            constraintincard = itemView.findViewById(R.id.constraintincard)
         }
     }
 

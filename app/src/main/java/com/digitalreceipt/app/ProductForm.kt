@@ -51,6 +51,7 @@ class ProductForm : AppCompatActivity() {
                         entwarcardnum.editText!!.text.toString(),
                         entexprdate.editText!!.text.toString(),
                         entnoshop.editText!!.text.toString(),
+                        entnameofshop.editText!!.text.toString(),
                         entupload.editText!!.text.toString(),
                         enttedst.editText!!.text.toString()
                     )

@@ -4,7 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.categoriescardview.view.*
 import kotlinx.android.synthetic.main.row_cat.view.*
+import kotlinx.android.synthetic.main.row_cat.view.textViewCat
 
 class CatAdapter(private val callBack: (Int) -> Unit) :
     RecyclerView.Adapter<CatAdapter.ViewHolder>() {
@@ -14,14 +16,14 @@ class CatAdapter(private val callBack: (Int) -> Unit) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.row_cat, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.categoriescardview, parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.itemView) {
-            textViewCat.text = arrayList[position]
-            textViewCat.setOnClickListener {
+            categorynameincard.text = arrayList[position]
+            categoriesconstraintincard.setOnClickListener {
                 callBack.invoke(position)
             }
         }
