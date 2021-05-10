@@ -4,11 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Categorypage">
+    tools:context=".Categorypage"
+    android:background="@color/black">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomlayout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@color/teal_200">
+
+        <!--<androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sortbtn"
+            android:layout_width="85dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="10dp"
+            android:text="Sorting"
+            android:onClick="SelectedItem"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/homebtn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/teal_200"
+            android:outlineProvider="none"/>-->
+
+        <!--        <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/categorybtn"
+                    android:layout_width="85dp"
+                    android:layout_height="55dp"
+                    android:background="@color/teal_200"
+                    android:outlineProvider="none"
+                    android:text="Category"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.6"
+                    tools:layout_editor_absoluteX="163dp" />-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/homebtn"
+            android:layout_width="165dp"
+            android:layout_height="55dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/teal_200"
+            android:outlineProvider="none"
+            android:text="Home"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/settingbtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/settingbtn"
+            android:layout_width="165dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/teal_200"
+            android:outlineProvider="none"
+            android:text="Setting"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.933"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addiconbottom"
+        app:layout_constraintTop_toTopOf="@id/bottomlayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomlayout"
+        android:backgroundTint="@color/white"
+        app:elevation="16dp"
+        app:layout_constraintEnd_toEndOf="@id/bottomlayout"
+        app:fabCustomSize="60dp"
+        app:maxImageSize="70dp"
+        app:layout_constraintStart_toStartOf="@id/bottomlayout"
+        android:src="@drawable/plusiconorange_foreground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Add Receipt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

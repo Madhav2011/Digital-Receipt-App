@@ -11,21 +11,32 @@
         android:roundIcon="@drawable/mobilereceipt"
         android:supportsRtl="true"
         android:theme="@style/Theme.LayoutDemo1">
-        <activity android:name=".productdetails"></activity>
+        <activity android:name=".productdetails"
+            android:label="Product Details"
+            android:parentActivityName=".homepage1"
+            android:theme="@style/Theme.withactionbar"></activity>
         <activity
             android:name=".Categorypage"
+            android:label="Categories"
             android:theme="@style/Theme.withactionbar" />
         <activity
             android:name=".ContactUsPage"
+            android:label="Contact Us"
+            android:parentActivityName=".SettingPage"
             android:theme="@style/Theme.withactionbar" />
         <activity
             android:name=".AboutUsPage"
+            android:parentActivityName=".SettingPage"
+            android:label="About Us"
             android:theme="@style/Theme.withactionbar" />
         <activity
             android:name=".SettingPage"
+            android:label="Settings"
             android:theme="@style/Theme.withactionbar" />
         <activity
             android:name=".ProductForm"
+            android:label="Add New Receipt"
+            android:parentActivityName=".homepage1"
             android:theme="@style/Theme.withactionbar" />
         <activity android:name=".SplashScreen">
             <intent-filter>

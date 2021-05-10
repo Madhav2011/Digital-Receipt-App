@@ -1,8 +1,11 @@
 package com.digitalreceipt.app
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.bumptech.glide.Glide
 import com.digitalreceipt.app.dataclass.NewProductDataClass
 import com.google.firebase.database.DataSnapshot
@@ -16,6 +19,15 @@ class productdetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_productdetails)
+
+        var buttonsave: AppCompatButton = findViewById(R.id.detailsbuttonAdd)
+
+        buttonsave.setOnClickListener {
+            Toast.makeText(this, "Receipt Saved Succesfully", Toast.LENGTH_SHORT).show()
+            var intent: Intent = Intent(applicationContext,homepage1::class.java)
+            startActivity(intent)
+        }
+
 
         val intent = intent.getIntExtra("productId", -1)
         val preferences = getSharedPreferences("MyPref", Context.MODE_PRIVATE)

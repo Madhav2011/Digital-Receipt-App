@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
-    android:background="@color/white">
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/imagelogo"
@@ -14,10 +14,10 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.421"
         app:srcCompat="@drawable/mobilereceipt" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:fontFamily="@font/actor"
         android:gravity="center"
         android:text="Digital Receipt App"
-        android:textColor="#897FBA"
+        android:textColor="#FAFFA929"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"

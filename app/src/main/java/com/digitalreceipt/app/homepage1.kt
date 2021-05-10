@@ -54,7 +54,6 @@ class homepage1 : AppCompatActivity() {
         setContentView(R.layout.activity_homepage1)
         getAllData()
         var homebutton: AppCompatButton = findViewById(R.id.homebtn)
-        var sortbutton: AppCompatButton = findViewById(R.id.sortbtn)
         var categorybutton: AppCompatButton = findViewById(R.id.categorybtn)
         var settingbutton: AppCompatButton = findViewById(R.id.settingbtn)
         var floatingaddicon: FloatingActionButton = findViewById(R.id.addiconbottom)

@@ -65,6 +65,9 @@ class Registerpage : AppCompatActivity() {
             .addOnCompleteListener {
                 if (it.isComplete) {
                     flag = true
+                    Toast.makeText(this, "Registration Successfull", Toast.LENGTH_SHORT).show()
+                    var intent: Intent = Intent(applicationContext,MainActivity::class.java)
+                    startActivity(intent)
                 }
             }
         return flag
